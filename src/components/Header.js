@@ -9,7 +9,7 @@ class Header extends Component{
         //return React.createElement('div', null, 'Hello there, this is a React Composnet!')
         return (
             <header className="App-header">
-                <h2>{this.props.text}</h2>
+                <h2>Title: {this.props.text}</h2>
             </header>
         )
         // <h1 className="App-title">Discover the Movie Mojo</h1>

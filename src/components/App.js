@@ -14,7 +14,19 @@ class App extends Component {
       this.state = {
         movies: initialMovies
       };
+        
+        // Make sure to bind the method
+    this.loadAdditionalMovies = this.loadAdditionalMovies.bind(this);
     }
+    
+    loadAdditionalMovies() {
+  var currentMovies = { ...this.state.movies };
+  var newMovies = Object.assign( currentMovies, additionalMovies );
+ 
+  this.setState({ movies: newMovies });
+}
+    
+    
     
   render() {
     return (
@@ -23,6 +35,7 @@ class App extends Component {
         <p className="App-intro">
           Welcome to the 'Movie Mojo' React app!
         </p>
+        <div className="add-movies"><button onClick={this.loadAdditionalMovies}>Load more...</button></div>
         <div className="movies">
             {
             Object
